@@ -1,0 +1,781 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins: ital, wght@0, 100;0, 200;0, 300; 0,400; 0,500; 0,600;0, 700;0,800;0,900; 1,100;1,200; 1,300;1,400; 1,500; 1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none; 
+    font-family: 'Poppins';
+    border: 0;
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    background-color: #00284C;
+}
+
+::selection{
+    color: #fff;
+    background: #146C94;
+}
+
+hr{
+    border: dotted #f200ff 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 0px auto;
+}
+
+/*----header----*/
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+.header .btn-menu {
+    background-color: transparent;
+    display: block;
+}
+
+/*  menu */
+
+.header {
+    width: 100%;
+    background-color: #273164;
+    color: #00E5BC;
+    position: fixed;
+    z-index: 100;
+    font-size: 20px;
+    box-shadow: 0px -80px 100px #00E5BC;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    flex-flow: row wrap;
+}
+
+.header .btn-menu  {
+    display: none;
+    cursor: pointer;
+}
+
+.logo-container img
+{
+    width: 70px;
+}
+
+.header .svg {
+    width: 3em;
+    height: 3em;
+    fill: #f200ff;
+}
+
+.header .li {
+    margin: 0 0.5em;
+}
+
+.header .ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header nav ul li a:hover
+{ 
+    color: #00284C;
+    background-color: #00E5BC;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 600px) {
+    .header .btn-menu  {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header .nav {
+        width: 100%;
+        opacity: 0;
+        height: 0vh;
+        pointer-events: none;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header .nav.activo {
+        opacity: 1;
+        height: 50vh;
+        pointer-events: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+.header .ul {
+    flex-direction: column;
+}
+}
+
+@media screen and (max-width: 600px) {
+.header .li {
+    margin: 1em 0;
+}
+}
+
+/*home*/
+
+.top-container{
+    background-color:#2A356D;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    text-align: center;
+}
+
+.top-container h1{
+    color: #00E5BC;
+    font-size: 100px;
+}
+
+.top-container h2{
+    color: #fff;
+    font-size: 40px;
+    margin: 20px 16px;
+}
+
+.last-name{
+    color: #01989F;
+}
+
+.top-container .text{
+    display: flex;
+    justify-content: center;
+    color: #00E5BC;
+    font-size: 20px;
+}
+
+.top-container .text .one{
+    color: #ffffff;
+    animation: anim 3s linear infinite;
+}
+
+@keyframes anim{
+    0%{
+        transform: translate(-111px,0);
+        color: #f200ff;
+    }
+    50%{
+        transform: translate(0,0);
+        color: #ffffff;
+    }
+}
+
+.top-container .text .two{
+    color: #ffffff;
+    animation: anima 3s linear infinite;
+}
+
+@keyframes anima{
+    50%{
+        transform: translate(0,0);
+        color: #ffffff;
+
+    }
+    0%{
+        transform: translate(111px,0);
+        color: #f200ff;
+    }
+}
+
+
+/*about*/
+
+
+.container__cover{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+}
+
+.cover{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.text__cover{
+    width: 100%;
+}
+
+.text__cover h1{
+    font-size: 50px;
+    text-align: center;
+    color: #00E5BC;
+
+}
+
+.text__cover p{
+    margin-top: 50px;
+    color: #FFF;
+    margin-left: 150px;
+    animation-duration: 5s;
+    animation-name: slidein;
+}
+
+.image__cover{
+    width: 100%;
+}
+
+.image__cover img{
+    width: 350px;
+    margin-top: 20px;
+    margin-left: 250px;
+    border: 4px solid #00E5BC;
+    animation-duration: 5s;
+    animation-name: about;
+}
+
+/*Skills*/
+
+.container__card-primary {
+    padding-top: 60px;
+}
+
+.card__primary {
+    margin: auto;
+    text-align: center;
+    padding: 0px 200px;
+}
+
+.container__box-cardPrimary img {
+    width: 30%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container__box-cardPrimary h2 {
+    font-size: 17px;
+    margin-top: 10px;
+    color: #FFF;
+}
+
+.container__box-cardPrimary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 40px;
+}
+
+.box__card-primary {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #00E5BC;
+    border-radius: 100px;
+    margin: 14px;
+    transition: all 300ms;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.box__card-primary:hover {
+    border: 50px solid transparent;
+    box-shadow: 0px 6px 50px -30px #00E5BC;
+}
+
+/*works*/
+
+.works{
+    color: #fff;
+    padding-top: 60px;
+}
+
+.works .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.works h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+.works .galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.works .galeria .proyecto{
+    position: relative;
+    max-width: 340px;
+    height: fit-content;
+    margin: 10px;
+    cursor: pointer;
+}
+.works .galeria .proyecto img{
+    width: 100%;
+    display: block;
+}
+.works .galeria .proyecto .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(#01989F, #2A356D);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0;
+}
+.works .galeria .proyecto .overlay h3{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.works .galeria .proyecto .overlay:hover{
+    opacity: 1;
+}
+.works .galeria .proyecto .overlay:hover h3{
+    margin-bottom: 0px;
+}
+
+.works .galeria .proyecto .overlay .btn{
+    border: none;
+    margin: 5px 0px;
+    color: #f200ff;
+    background-color: #fff;
+}
+
+/*curriculum*/
+
+.text__cover .tittle_curriculum{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.image_curriculum{
+    width: 100%;
+}
+
+.image_curriculum img{
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: none;
+}
+
+.cover button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #f200ff;
+    width: fit-content;
+    display: block;
+    margin: 20px 150px;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #ffffff;
+    position: relative;
+    z-index: 10;
+}
+
+.cover button a{
+    color: #fff;
+}
+
+.cover button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #f200ff;
+    z-index: -1;
+    transition: 1s;
+}
+.cover button:hover .overlay{
+    width: 100%;
+    color: #00284C;
+}
+
+/*------footer-----*/
+.footer-after{
+    background: #2A356D;
+}
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  background: #2A356D;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #f200ff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+    color: #fff;
+    transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+    color: #00284C;
+    opacity: 1;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.btn-gmail{
+    font-size: 1rem;
+    color: #ffffff;
+    border: 2px solid #00E5BC;
+    margin: 0px 10px;
+    padding: 5px 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.btn-gmail:hover {
+    color: #fff;
+    background-color: #00E5BC;
+    transform: translateY(-10px);
+}
+
+.footer p {
+  color: #2a7365;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/*Responsive*/
+
+@media (max-width: 600px) {
+
+    /*about*/
+    .container__cover{
+        padding-top: 50px; /* Ajustar el espacio superior */
+        padding-bottom: 50px; /* Ajustar el espacio inferior */
+        display: flex;
+        flex-direction: column; /* Cambiar a disposición vertical */
+        align-items: center;
+    }
+    
+    .cover{
+        width: 100%; /* Ocupar el ancho completo */
+        max-width: 600px; /* Establecer el ancho máximo */
+        display: flex;
+        flex-direction: column; /* Cambiar a disposición vertical */
+        align-items: center;
+        padding: 0px 10px; /* Reducir el relleno horizontal */
+        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+    }
+    
+    .text__cover{
+        width: 100%;
+        padding-right: 0; /* Eliminar el relleno derecho */
+    }
+    
+    .text__cover h1{
+        font-size: 30px; /* Reducir el tamaño de fuente */
+        text-align: center;
+        color: #00E5BC;
+    }
+    
+    .text__cover p{
+        margin-top: 20px; /* Ajustar el margen superior */
+        color: #FFF;
+        margin-left: 0; /* Eliminar el margen izquierdo */
+        text-align: center; /* Centrar el texto */
+        animation: slidein 5s ease-in-out; /* Simplificar la animación */
+    }
+    
+    .image__cover{
+        width: 100%;
+        text-align: center; /* Centrar la imagen */
+    }
+    
+    .image__cover img{
+        width: 100%; /* Ocupar el ancho completo del contenedor */
+        max-width: 300px; /* Establecer el ancho máximo */
+        display:block;
+        margin:auto;
+        border: 4px solid #00E5BC;
+        animation: about 5s ease-in-out; /* Simplificar la animación */
+    }
+    
+    @keyframes slidein {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+      
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+    }
+    
+    @keyframes about{
+        0%{
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    /*curriculum*/
+    
+    .text__cover .tittle-curriculum {
+        margin-top: 10px; /* Reducir el margen superior */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+        text-align: center; /* Centrar el título */
+    }
+    
+    .image_curriculum {
+        width: 100%;
+        text-align: center; /* Centrar la imagen */
+    }
+    
+    .image_curriculum img {
+        max-width: 50%; /* Cambiar a un ancho máximo relativo */
+        width: auto; /* Restablecer el ancho automático */
+        margin-top: 20px;
+        margin-left: 0; /* Eliminar el margen izquierdo */
+        border: none;
+    }
+    
+    .cover button {
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid #00E5BC;
+        display: block;
+        margin: 20px auto; /* Centrar horizontalmente */
+        padding: 10px 22px;
+        font-size: 16px;
+        color: #ffffff;
+        position: relative;
+        z-index: 10;
+        width: fit-content;
+    }
+    
+    .cover button .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #00E5BC;
+        z-index: -1;
+        transition: width 1s; /* Cambiar la propiedad de transición */
+    }
+    
+    .cover button:hover .overlay {
+        width: 100%;
+        color: #00284C;
+    }
+    
+}
+
+@media (max-width: 768px) {
+
+    /*about*/
+    .container__cover{
+        padding-top: 50px; /* Ajustar el espacio superior */
+        padding-bottom: 50px; /* Ajustar el espacio inferior */
+    }
+    
+    .cover{
+        width: 100%; /* Ocupar el ancho completo */
+        max-width: 600px; /* Establecer el ancho máximo */
+        margin: auto;
+        padding: 0px 10px; /* Reducir el relleno horizontal */
+        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+    }
+    
+    .text__cover h1{
+        font-size: 30px; /* Reducir el tamaño de fuente */
+    }
+    
+    .text__cover p{
+        margin-top: 20px; /* Ajustar el margen superior */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+    
+    .image__cover img{
+        max-width: 300px; /* Establecer el ancho máximo */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /*curriculum*/
+    .text__cover .tittle-curriculum {
+        margin-top: 10px; /* Reducir el margen superior */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+    
+    .image_curriculum img {
+        max-width: 50%; /* Cambiar a un ancho máximo relativo */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cover button {
+        margin: 20px auto; /* Centrar horizontalmente */
+    }
+}
+@media (max-width: 992px) {
+
+    /*about*/
+    .container__cover{
+        padding-top: 50px; /* Ajustar el espacio superior */
+        padding-bottom: 50px; /* Ajustar el espacio inferior */
+    }
+    
+    .cover{
+        width: 100%; /* Ocupar el ancho completo */
+        max-width: 600px; /* Establecer el ancho máximo */
+        margin: auto;
+        padding: 0px 10px; /* Reducir el relleno horizontal */
+        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+    }
+    
+    .text__cover h1{
+        font-size: 30px; /* Reducir el tamaño de fuente */
+    }
+    
+    .text__cover p{
+        margin-top: 20px; /* Ajustar el margen superior */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+    
+    .image__cover img{
+        max-width: 300px; /* Establecer el ancho máximo */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /*curriculum*/
+    .text__cover .tittle-curriculum {
+        margin-top: 10px; /* Reducir el margen superior */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+    
+    .image_curriculum img {
+        max-width: 50%; /* Cambiar a un ancho máximo relativo */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cover button {
+        margin: 20px auto; /* Centrar horizontalmente */
+    }
+}
+
+@media (max-width: 1200px) {
+
+    /*about*/
+    .container__cover{
+        padding-top: 50px; /* Ajustar el espacio superior */
+        padding-bottom: 50px; /* Ajustar el espacio inferior */
+    }
+    
+    .cover{
+        width: 100%; /* Ocupar el ancho completo */
+        max-width: 600px; /* Establecer el ancho máximo */
+        margin: auto;
+        padding: 0px 10px; /* Reducir el relleno horizontal */
+        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+    }
+    
+    .text__cover h1{
+        font-size: 30px; /* Reducir el tamaño de fuente */
+    }
+    
+    .text__cover p{
+        margin-top: 20px; /* Ajustar el margen superior */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+    
+    .image__cover img{
+        max-width: 300px; /* Establecer el ancho máximo */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /*curriculum*/
+    .text__cover .tittle-curriculum {
+        margin-top: 10px; /* Reducir el margen superior */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+    
+    .image_curriculum img {
+        max-width: 50%; /* Cambiar a un ancho máximo relativo */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cover button {
+        margin: 20px auto; /* Centrar horizontalmente */
+    }
+}
