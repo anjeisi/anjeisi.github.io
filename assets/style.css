@@ -6,7 +6,6 @@
     text-decoration: none; 
     font-family: 'Poppins';
     border: 0;
-    -webkit-box-sizing: border-box;
 }
 
 body{
@@ -56,7 +55,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 100px;
+    padding: 20px 20px;
     flex-flow: row wrap;
 }
 
@@ -258,9 +257,13 @@ li {
 }
 
 .card__primary {
-    margin: auto;
+    padding: 20px;
     text-align: center;
     padding: 0px 200px;
+}
+
+.box__card-primary{
+    padding: 20px;
 }
 
 .container__box-cardPrimary img {
@@ -285,11 +288,11 @@ li {
 }
 
 .box__card-primary {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 2px solid #00E5BC;
-    border-radius: 100px;
-    margin: 14px;
+    border-radius: none;
+    margin: 20px;
     transition: all 300ms;
     box-sizing: border-box;
     display: flex;
@@ -299,8 +302,8 @@ li {
 }
 
 .box__card-primary:hover {
-    border: 50px solid transparent;
-    box-shadow: 0px 6px 50px -30px #00E5BC;
+    border: none;
+    box-shadow: 0px 6px 50px -10px #00E5BC;
 }
 
 /*works*/
@@ -508,58 +511,64 @@ li {
 
 /*Responsive*/
 
-@media (max-width: 600px) {
+@media (max-width: 320px) {
 
     /*about*/
+    .header{
+        padding: auto;
+    }
+    .btn-menu{
+        padding: auto;
+    }
     .container__cover{
-        padding-top: 50px; /* Ajustar el espacio superior */
-        padding-bottom: 50px; /* Ajustar el espacio inferior */
+        padding-top: 50px; 
+        padding-bottom: 50px; 
         display: flex;
-        flex-direction: column; /* Cambiar a disposición vertical */
+        flex-direction: column;
         align-items: center;
     }
     
     .cover{
-        width: 100%; /* Ocupar el ancho completo */
-        max-width: 600px; /* Establecer el ancho máximo */
+        width: 100%; 
+        max-width: 600px; 
         display: flex;
-        flex-direction: column; /* Cambiar a disposición vertical */
+        flex-direction: column; 
         align-items: center;
-        padding: 0px 10px; /* Reducir el relleno horizontal */
-        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+        padding: 0px 10px;
+        box-sizing: border-box;
     }
     
     .text__cover{
         width: 100%;
-        padding-right: 0; /* Eliminar el relleno derecho */
+        padding-right: 0;
     }
     
     .text__cover h1{
-        font-size: 30px; /* Reducir el tamaño de fuente */
+        font-size: 30px; 
         text-align: center;
         color: #00E5BC;
     }
     
     .text__cover p{
-        margin-top: 20px; /* Ajustar el margen superior */
+        margin-top: 20px; 
         color: #FFF;
-        margin-left: 0; /* Eliminar el margen izquierdo */
-        text-align: center; /* Centrar el texto */
-        animation: slidein 5s ease-in-out; /* Simplificar la animación */
+        margin-left: 0;
+        text-align: center; 
+        animation: slidein 5s ease-in-out; 
     }
     
     .image__cover{
         width: 100%;
-        text-align: center; /* Centrar la imagen */
+        text-align: center; 
     }
     
     .image__cover img{
-        width: 100%; /* Ocupar el ancho completo del contenedor */
-        max-width: 300px; /* Establecer el ancho máximo */
+        width: 100%; 
+        max-width: 300px; 
         display:block;
         margin:auto;
         border: 4px solid #00E5BC;
-        animation: about 5s ease-in-out; /* Simplificar la animación */
+        animation: about 5s ease-in-out; 
     }
     
     @keyframes slidein {
@@ -587,21 +596,21 @@ li {
     /*curriculum*/
     
     .text__cover .tittle-curriculum {
-        margin-top: 10px; /* Reducir el margen superior */
-        margin-left: 0; /* Eliminar el margen izquierdo */
-        text-align: center; /* Centrar el título */
+        margin-top: 10px;
+        margin-left: 0; 
+        text-align: center; 
     }
     
     .image_curriculum {
         width: 100%;
-        text-align: center; /* Centrar la imagen */
+        text-align: center;
     }
     
     .image_curriculum img {
-        max-width: 50%; /* Cambiar a un ancho máximo relativo */
-        width: auto; /* Restablecer el ancho automático */
+        max-width: 50%; 
+        width: auto; 
         margin-top: 20px;
-        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-left: 0;
         border: none;
     }
     
@@ -610,7 +619,7 @@ li {
         background-color: transparent;
         border: 2px solid #00E5BC;
         display: block;
-        margin: 20px auto; /* Centrar horizontalmente */
+        margin: 20px auto; 
         padding: 10px 22px;
         font-size: 16px;
         color: #ffffff;
@@ -627,7 +636,7 @@ li {
         height: 100%;
         background-color: #00E5BC;
         z-index: -1;
-        transition: width 1s; /* Cambiar la propiedad de transición */
+        transition: width 1s; 
     }
     
     .cover button:hover .overlay {
@@ -641,94 +650,94 @@ li {
 
     /*about*/
     .container__cover{
-        padding-top: 50px; /* Ajustar el espacio superior */
-        padding-bottom: 50px; /* Ajustar el espacio inferior */
+        padding-top: 50px; 
+        padding-bottom: 50px; 
     }
     
     .cover{
-        width: 100%; /* Ocupar el ancho completo */
-        max-width: 600px; /* Establecer el ancho máximo */
+        width: 100%;
+        max-width: 600px; 
         margin: auto;
-        padding: 0px 10px; /* Reducir el relleno horizontal */
-        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+        padding: 0px 10px;
+        box-sizing: border-box; 
     }
     
     .text__cover h1{
-        font-size: 30px; /* Reducir el tamaño de fuente */
+        font-size: 30px;
     }
     
     .text__cover p{
-        margin-top: 20px; /* Ajustar el margen superior */
-        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-top: 20px;
+        margin-left: 0; 
     }
     
     .image__cover img{
-        max-width: 300px; /* Establecer el ancho máximo */
+        max-width: 300px; 
         margin-left: auto;
         margin-right: auto;
     }
     
     /*curriculum*/
     .text__cover .tittle-curriculum {
-        margin-top: 10px; /* Reducir el margen superior */
-        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-top: 10px; 
+        margin-left: 0; 
     }
     
     .image_curriculum img {
-        max-width: 50%; /* Cambiar a un ancho máximo relativo */
+        max-width: 50%;
         margin-left: auto;
         margin-right: auto;
     }
     
     .cover button {
-        margin: 20px auto; /* Centrar horizontalmente */
+        margin: 20px auto; 
     }
 }
 @media (max-width: 992px) {
 
     /*about*/
     .container__cover{
-        padding-top: 50px; /* Ajustar el espacio superior */
-        padding-bottom: 50px; /* Ajustar el espacio inferior */
+        padding-top: 50px;
+        padding-bottom: 50px; 
     }
     
     .cover{
-        width: 100%; /* Ocupar el ancho completo */
-        max-width: 600px; /* Establecer el ancho máximo */
+        width: 100%; 
+        max-width: 600px;
         margin: auto;
-        padding: 0px 10px; /* Reducir el relleno horizontal */
-        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+        padding: 0px 10px; 
+        box-sizing: border-box; 
     }
     
     .text__cover h1{
-        font-size: 30px; /* Reducir el tamaño de fuente */
+        font-size: 30px; 
     }
     
     .text__cover p{
-        margin-top: 20px; /* Ajustar el margen superior */
-        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-top: 20px; 
+        margin-left: 0;
     }
     
     .image__cover img{
-        max-width: 300px; /* Establecer el ancho máximo */
+        max-width: 300px; 
         margin-left: auto;
         margin-right: auto;
     }
     
     /*curriculum*/
     .text__cover .tittle-curriculum {
-        margin-top: 10px; /* Reducir el margen superior */
-        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-top: 10px;
+        margin-left: 0; 
     }
     
     .image_curriculum img {
-        max-width: 50%; /* Cambiar a un ancho máximo relativo */
+        max-width: 50%; 
         margin-left: auto;
         margin-right: auto;
     }
     
     .cover button {
-        margin: 20px auto; /* Centrar horizontalmente */
+        margin: 20px auto; 
     }
 }
 
@@ -736,46 +745,46 @@ li {
 
     /*about*/
     .container__cover{
-        padding-top: 50px; /* Ajustar el espacio superior */
-        padding-bottom: 50px; /* Ajustar el espacio inferior */
+        padding-top: 50px; 
+        padding-bottom: 50px; 
     }
     
     .cover{
-        width: 100%; /* Ocupar el ancho completo */
-        max-width: 600px; /* Establecer el ancho máximo */
+        width: 100%; 
+        max-width: 600px; 
         margin: auto;
-        padding: 0px 10px; /* Reducir el relleno horizontal */
-        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+        padding: 0px 10px; 
+        box-sizing: border-box; 
     }
     
     .text__cover h1{
-        font-size: 30px; /* Reducir el tamaño de fuente */
+        font-size: 30px; 
     }
     
     .text__cover p{
-        margin-top: 20px; /* Ajustar el margen superior */
-        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-top: 20px; 
+        margin-left: 0; 
     }
     
     .image__cover img{
-        max-width: 300px; /* Establecer el ancho máximo */
+        max-width: 300px; 
         margin-left: auto;
         margin-right: auto;
     }
     
     /*curriculum*/
     .text__cover .tittle-curriculum {
-        margin-top: 10px; /* Reducir el margen superior */
-        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-top: 10px;
+        margin-left: 0;
     }
     
     .image_curriculum img {
-        max-width: 50%; /* Cambiar a un ancho máximo relativo */
+        max-width: 50%; 
         margin-left: auto;
         margin-right: auto;
     }
     
     .cover button {
-        margin: 20px auto; /* Centrar horizontalmente */
+        margin: 20px auto; 
     }
 }
