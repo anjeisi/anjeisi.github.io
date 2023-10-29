@@ -12,44 +12,52 @@
 </head>
 <body>
     <!--Header Menu-->
-    <header class="header">
-        <a href="#home" class="logo-container">
-            <img src="assets\img\chica.png" alt="">
-        </a>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo">
+                <img class="nav__logo-circule" src="assets\img\phonoperfil.jpeg" alt="Imagen">
+            </a>
 
-        <button class="btn-menu">
-            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-            </svg>
-        </button>
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title"><hr></span>
 
-        <nav class="nav">
-            <ul class="ul">
-                <li class="li"><a href="#about" class="a">About</a></li>
-                <li class="li"><a href="#skills" class="a">Skills</a></li>
-                <li class="li"><a href="#Works" class="a">Works</a></li>
-                <li class="li"><a href="#curriculum" class="a">Curriculum</a></li>
-                <li class="li"><a href="#footer" class="a">Contact</a></li>
-            </ul>
+                <h3 class="nav__name">Portafolio</h3>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About me</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">Skills</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#works" class="nav__link">Works</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#curriculum" class="nav__link">Curriculum</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-circle-fill"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-moon-fill change-theme" id="theme-button"></i>
+
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
         </nav>
-
-        <ul class="nav social-icon">
-            <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/anjeisi">
-                <ion-icon name="logo-github"></ion-icon>
-              </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://linkedin.com/in/anjeisiacostacarvajal">
-              <ion-icon name="logo-linkedin"></ion-icon>
-          </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://instagram.com/echi_xi?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/anjeisi.iac.7?mibextid=ZbWKwL">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a></li>
-              <a class="btn-gmail" style="text-decoration: none;" href="mailto:anjeisiacostacarvajal@gmail.com">
-                GMAIL</a>
-          </ul>
     </header>
+
+    <!--Home-->
+
 
     <section class="home" id="home">
         <div class="top-container">
@@ -61,25 +69,30 @@
         </div>
     </section>
 
-    <section class="about" id="about">
-        <div class="container__cover div__offset">
-            <section class="image__cover">
-                <img src="assets\img\chica.png" alt="">
-            </section>
-            <div class="cover">
-                <section class="text__cover">
-                    <h1>About Me</h1>
-                    <hr>
-                    <p>Software Development student, creative, empathetic, committed, I know how to work in a team, I am interested in the area of Desktop Application Development and Web Development; I am passionate, I am constantly growing and learning.</p>
-                </section>
+    <!--About Me-->
+
+    <section class="about">
+        <div class="container_about">
+            <div class="image-about"  id="about">
+                <img src="assets\img\phonoperfil.jpeg" alt="Imagen">
+            </div>
+            <div class="text-about">
+                <h1>About Me</h1>
+                <hr>
+                <p>Software Development student, creative, empathetic, committed, 
+                    I know how to work in a team, I am interested in the area of Desktop 
+                    Application Development and Web Development; I am passionate,
+                    I am constantly growing and learning.</p>
             </div>
         </div>
     </section>
 
+    <!--Skills-->
+
     <section class="skills" id="skills">
         <div class="container__trust container__card-primary">
             <div class="trust card__primary">
-                <section class="text__cover">
+                <section class="text-gene">
                     <h1>Skills</h1>
                     <hr>
                 </section>
@@ -133,9 +146,11 @@
         </div>
     </section>
 
+    <!-----Works-->
+
     <section class="works" id="works">
         <div class="contenido-seccion">
-            <section class="text__cover">
+            <section class="text-gene">
                 <h1>Works</h1>
                 <hr>
             </section>
@@ -177,29 +192,32 @@
         </div>
     </section>
 
-    <section class="curriculum" id="curriculum">
-        <div class="container__cover div__offset">
-            <div class="cover">
-                <section class="text__cover">
-                    <h1 class="tittle_curriculum">Curriculum Vitae</h1>
-                    <p>If you want to know more about me and my professional training, download my Curriculum Vitae where I detail everything, school training, courses taken, technical and personal skills.</p>
-                    <button>
-                        <a class="text-white" href="assets\Curriculum Anjeisi Acosta.pdf" download="Curriculum-Vitae.pdf">
-                            Download CV </a>
-                        <i class="fa-solid fa-download"></i>
-                        <span class="overlay"></span>
-                    </button>
-                </section>
+    <!---Curriculum-->
+
+    <section class="about">
+        <div class="container_about">
+            <div class="text-curriculum">
+                <h1>Curriculum Vitae</h1>
+                <hr>
+                <p>If you want to know more about me and my professional training, 
+                    download my Curriculum Vitae where I detail everything, school 
+                    training, courses taken, technical and personal skills.</p>
+                <button>
+                    <a class="text-white" href="assets\Curriculum Anjeisi Acosta.pdf" download="Curriculum-Vitae.pdf">
+                        Download CV </a>
+                    <i class="fa-solid fa-download"></i>
+                    <span class="overlay"></span>
+                </button>
             </div>
-            <section class="image_curriculum">
-                <img src="assets\img\curriculum.png" alt="">
-            </section>
+            <div class="image-curriculum"  id="curriculum">
+                <img src="assets\img\phonoperfil.jpeg" alt="Imagen">
+            </div>
         </div>
     </section>
 
     <!--Footer-->
 
-    <footer class="footer" id="footer">
+    <footer class="footer" id="contact">
         <ul class="social-icon">
             <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/anjeisi">
                 <ion-icon name="logo-github"></ion-icon>
