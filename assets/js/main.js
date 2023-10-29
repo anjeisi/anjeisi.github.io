@@ -1,11 +1,25 @@
-//MENU
+/*button mini menu*/
+const navMenu = document.getElementById('nav-menu'),
+navToggle = document.getElementById('nav-toggle'),
+navClose = document.getElementById('nav-close')
 
-/* Cuando hago CLICK .button, .nav TOGGLE 'activo' */
-var button = document.querySelector('.btn-menu');
-var nav = document.querySelector('.nav');
-button.addEventListener('click', function () {
-    nav.classList.toggle('activo');
-});
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
+if(navClose){
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu')
+    })
+}
+
+const navLink = document.querySelectorAll('nav__link')
+const LinkAction = () => {
+    const navMenu = document.getElementById('nav-menu')
+    navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', LinkAction))
 
 
 //ANIMATIONS de entradas
