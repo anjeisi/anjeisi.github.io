@@ -12,10 +12,6 @@
     scroll-behavior: smooth;
 }
 
-body{
-    background-color: #00284C;
-}
-
 /*scroll bar*/
 
 ::-webkit-scrollbar{
@@ -46,10 +42,11 @@ hr{
     width: 4%;
     margin: 10px auto;
 }
+body{
+    background-color: #00284C;
+}
 
 /*----header----*/
-
-
 .header{
     position: fixed;
     width: 100%;
@@ -79,14 +76,10 @@ hr{
 .nav__logo-circule, .nav__toggle{
     width: 60px;
     height: 60px;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     color: #00E5BC;
     display: grid;
     place-items: center;
-}
-
-.nav__logo-circule{
-    border-radius: 50%;
 }
 
 .nav__toggle{
@@ -193,133 +186,7 @@ hr{
     /*home*/
 
     /*about*/
-    .header{
-        padding: auto;
-    }
-    .btn-menu{
-        padding: auto;
-    }
-    .container__cover{
-        padding-top: 50px; 
-        padding-bottom: 50px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .cover{
-        width: 100%; 
-        max-width: 600px; 
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        padding: 0px 10px;
-        box-sizing: border-box;
-    }
-    
-    .text__cover{
-        width: 100%;
-        padding-right: 0;
-    }
-    
-    .text__cover h1{
-        font-size: 30px; 
-        text-align: center;
-        color: #00E5BC;
-    }
-    
-    .text__cover p{
-        margin-top: 20px; 
-        color: #FFF;
-        margin-left: 0;
-        text-align: center; 
-        animation: slidein 5s ease-in-out; 
-    }
-    
-    .image__cover{
-        width: 100%;
-        text-align: center; 
-    }
-    
-    .image__cover img{
-        width: 100%; 
-        max-width: 300px; 
-        display:block;
-        margin:auto;
-        border: 4px solid #00E5BC;
-        animation: about 5s ease-in-out; 
-    }
-    
-    @keyframes slidein {
-        0% {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-        
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes about{
-        0%{
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-        100%{
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    /*curriculum*/
-    
-    .text__cover .tittle-curriculum {
-        margin-top: 10px;
-        margin-left: 0; 
-        text-align: center; 
-    }
-    
-    .image_curriculum {
-        width: 100%;
-        text-align: center;
-    }
-    .image_curriculum img {
-        max-width: 50%; 
-        width: auto; 
-        margin-top: 20px;
-        margin-left: 0;
-        border: none;
-    }
-    .cover button {
-        cursor: pointer;
-        background-color: transparent;
-        border: 2px solid #00E5BC;
-        display: block;
-        margin: 20px auto; 
-        padding: 10px 22px;
-        font-size: 16px;
-        color: #ffffff;
-        position: relative;
-        z-index: 10;
-        width: fit-content;
-    }
-    
-    .cover button .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: #00E5BC;
-        z-index: -1;
-        transition: width 1s; 
-    }
-    
-    .cover button:hover .overlay {
-        width: 100%;
-        color: #00284C;
-    }
+   
 }
 
 /*responsive portatil*/
@@ -341,8 +208,9 @@ hr{
         display: none;
     }
     .nav__list{
+        padding: 100px;
         display: flex;
-        column-gap: 2rem;
+        column-gap: 3rem;
         text-decoration: none;
     }
     .nav__menu{
@@ -369,7 +237,7 @@ hr{
         color: #ffffff;
     }
     .nav__link:hover::after{
-        width: 40%;
+        width: 100%;
     }
     .active-link{
         color: #000;
@@ -499,25 +367,25 @@ hr{
         color: #FFF;
         
     }
-    button{
+    .text-curriculum button {
         cursor: pointer;
         background-color: transparent;
         border: 2px solid #f200ff;
         width: fit-content;
-        display: block;
-        margin: 20px 150px;
+        display: inline-block; 
+        margin: 20px auto; 
         padding: 10px 22px;
         font-size: 16px;
         color: #ffffff;
         position: relative;
         z-index: 10;
     }
-
-    button a{
+    
+    .text-curriculum button a {
         color: #fff;
     }
-
-    button .overlay{
+    
+    .text-curriculum button .overlay {
         position: absolute;
         top: 0;
         left: 0;
@@ -525,9 +393,10 @@ hr{
         height: 100%;
         background-color: #f200ff;
         z-index: -1;
-        transition: 1s;
+        transition: width 1s;
     }
-    button:hover .overlay{
+    
+    .text-curriculum button:hover .overlay {
         width: 100%;
         color: #00284C;
     }
