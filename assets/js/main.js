@@ -21,7 +21,6 @@ const LinkAction = () => {
 }
 navLink.forEach(n => n.addEventListener('click', LinkAction))
 
-
 //ANIMATIONS de entradas
 
 const sr = ScrollReveal({
@@ -33,7 +32,7 @@ const sr = ScrollReveal({
     // reset: true // Animations repeat
 })
 
-sr.reveal(`.image__cover, .image_curriculum,.last-name`, {origin: 'right'})
-sr.reveal(`.text__cover,.tittle_curriculum`, {origin: 'left'})
+sr.reveal(`.image-about, .image-curriculum,.last-name`, {origin: 'right'})
+sr.reveal(`.text-about,.text-curriculum`, {origin: 'left'})
 
-sr.reveal(`.proyecto, .box__card-primary, .cover button`, {interval: 50})
+sr.reveal(`.box__card-primary, .social-icon__item`, {interval: 50})
