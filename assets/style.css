@@ -668,7 +668,7 @@ body{
     border: none;
     margin: 5px 0px;
     color: #f200ff;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 /*------footer-----*/
