@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anjeisi Acosta — Arquitecta de Datos</title>
-<link rel="icon" type="image/png" href="assets\imgs\blogger.png">
+<title>Anjeisi Acosta Carvajal — Arquitecta de Datos</title>
 <script>
   (function(){
     try{
@@ -27,7 +26,7 @@
     --line: #dde3ec;
     --accent: #06b6d4;
     --accent-soft: #e0f7fb;
-    --grid-line-color: rgba(18,23,43,0.035);
+    --grid-line-color: rgba(18,23,43,0.09);
     --tag-text: #0e7490;
     --btn-bg: #1e293b;
     --btn-text: #ffffff;
@@ -44,7 +43,7 @@
     --line: #2c3a54;
     --accent: #22d3ee;
     --accent-soft: #113a44;
-    --grid-line-color: rgba(255,255,255,0.045);
+    --grid-line-color: rgba(255,255,255,0.09);
     --tag-text: #7dd3fc;
     --btn-bg: #eef2f9;
     --btn-text: #0f172a;
@@ -52,7 +51,7 @@
     --nav-bg: rgba(15,23,42,0.85);
     --nav-shadow: 0 1px 0 rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.35);
   }
-  body, .project-card, .kpi, .edu-card, .contact-row a, .chip, .theme-toggle, nav{
+  body, .project-card, .kpi, .edu-card, .contact-row a, .chip, .theme-toggle, nav, .contact-box{
     transition: background-color .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
   }
   *{box-sizing:border-box;}
@@ -71,10 +70,8 @@
   /* subtle grid texture background */
   .grid-bg{
     position:fixed; inset:0; z-index:-1;
-    background-image:
-      linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
-    background-size: 48px 48px;
+    background-image: radial-gradient(var(--grid-line-color) 1.4px, transparent 1.4px);
+    background-size: 28px 28px;
   }
 
   /* NAV */
@@ -131,6 +128,11 @@
     letter-spacing:-0.02em;
   }
   h1.name .accent{ color:var(--accent); }
+  .scramble-char{ display:inline-block; }
+  .scramble-char.scrambling{
+    color:var(--accent);
+    text-shadow: 0 0 14px var(--accent-soft);
+  }
 
   .role-line{
     font-size:18px; color:var(--ink-soft); max-width:560px; line-height:1.55; margin-bottom:32px;
@@ -244,10 +246,26 @@
 
   /* EDUCATION */
   .edu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .edu-card{ border:1px solid var(--line); border-radius:var(--radius); padding:22px; background:var(--panel); }
+  .edu-card{ border:1px solid var(--line); border-radius:var(--radius); padding:22px; background:var(--panel); display:flex; flex-direction:column; }
   .edu-card .job-date{ display:block; margin-bottom:10px; }
   .edu-card h3{ font-family:'Space Grotesk', sans-serif; font-size:16px; margin:0 0 4px; }
   .edu-card p{ margin:0; color:var(--ink-soft); font-size:13.5px; }
+  .edu-certs{ margin:18px 0 0; padding-top:16px; border-top:1px solid var(--line); }
+  .edu-certs .skill-cat{ font-size:10.5px; margin-bottom:8px; }
+  .edu-certs ul{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .edu-certs li{ font-size:12.5px; color:var(--ink-soft); padding-left:14px; position:relative; line-height:1.5; }
+  .edu-certs li::before{ content:'—'; position:absolute; left:0; color:var(--accent); }
+  .edu-project{ margin-top:18px; padding-top:16px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .edu-project-label{ font-size:12.5px; }
+  .edu-project-label .skill-cat{ font-size:10.5px; margin-bottom:3px; }
+  .edu-project-name{ color:var(--ink-soft); font-style:italic; }
+  .btn-open-sm{
+    display:inline-flex; align-items:center; gap:5px; flex-shrink:0;
+    font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:500;
+    color:var(--btn-text); background:var(--btn-bg); text-decoration:none;
+    padding:7px 12px; border-radius:4px; transition:background .15s, color .15s;
+  }
+  .btn-open-sm:hover{ background:var(--accent); color:var(--btn-hover-text); }
 
   /* SKILLS */
   .skill-group{ margin-bottom:22px; }
@@ -263,14 +281,19 @@
   .cert-list li::before{ content:'—'; position:absolute; left:0; color:var(--accent); }
 
   /* CONTACT / FOOTER */
-  footer{ padding:70px 0 50px; border-top:1px solid var(--line); }
-  .contact-box{ background:#0f172a; color:#f5f6f8; border-radius:6px; padding:48px 40px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; border:1px solid var(--line); }
-  .contact-box h2{ color:#fff; font-size:28px; margin-bottom:8px; }
-  .contact-box p{ color:#9aa1bb; font-size:14px; margin:0; }
+  footer{ margin-top:64px; }
+  .contact-box{ background:var(--nav-bg); backdrop-filter:blur(10px); box-shadow:var(--nav-shadow); color:var(--ink); width:100%; }
+  .contact-inner{ padding:56px 32px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; }
+  .contact-box h2{ color:var(--ink); font-size:28px; margin-bottom:8px; }
+  .contact-box p{ color:var(--ink-soft); font-size:14px; margin:0; }
+  .contact-strip{
+    flex-basis:100%; margin-top:24px; padding-top:16px;
+    border-top:1px solid var(--line);
+    text-align:center; font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--ink-soft);
+  }
   .contact-links{ display:flex; flex-direction:column; gap:10px; font-family:'JetBrains Mono', monospace; font-size:13.5px; }
-  .contact-links a{ color:#e7ebff; text-decoration:none; }
+  .contact-links a{ color:var(--ink); text-decoration:none; }
   .contact-links a:hover{ color:var(--accent); }
-  .foot-note{ text-align:center; margin-top:36px; color:var(--ink-soft); font-size:12px; font-family:'JetBrains Mono', monospace; }
 
   @media (max-width:900px){
     .projects-grid{ grid-template-columns:repeat(2,1fr); }
@@ -280,7 +303,7 @@
     .edu-grid{ grid-template-columns:1fr; }
     .projects-grid{ grid-template-columns:1fr; }
     .navlinks{ display:none; }
-    .contact-box{ flex-direction:column; align-items:flex-start; }
+    .contact-inner{ flex-direction:column; align-items:flex-start; }
   }
 
   a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
@@ -328,7 +351,7 @@
 
   <header class="hero reveal-group">
     <div class="eyebrow">Disponible para nuevos proyectos</div>
-    <h1 class="name">Anjeisi Ivelisse<br>Acosta <span class="accent">Carvajal</span></h1>
+    <h1 class="name" id="hero-name">Anjeisi Ivelisse<br>Acosta <span class="accent">Carvajal</span></h1>
     <div class="role-line">
       <strong>Arquitecta de Datos</strong> especializada en Business Intelligence. Diseño pipelines ETL/ELT, dashboards en Power BI y modelos de datos que convierten información dispersa en decisiones claras.
     </div>
@@ -523,7 +546,6 @@
           </div>
         </div>
       </article>
-
       <article class="project-card">
         <div class="project-preview">
           <span class="preview-tag">Mockup</span>
@@ -589,6 +611,8 @@
         </div>
       </article>
 
+
+
     </div>
 
     <div style="margin-top:56px;">
@@ -608,19 +632,18 @@
             <svg viewBox="0 0 260 132" preserveAspectRatio="none">
               <rect x="0" y="0" width="260" height="132" fill="var(--bg)"/>
               <rect x="10" y="10" width="240" height="112" rx="4" fill="var(--panel)" stroke="var(--line)"/>
-              <circle cx="20" cy="20" r="2.5" fill="var(--line)"/>
-              <circle cx="28" cy="20" r="2.5" fill="var(--line)"/>
-              <circle cx="36" cy="20" r="2.5" fill="var(--line)"/>
-              <rect x="18" y="32" width="66" height="82" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="26" y="40" width="30" height="7" rx="1" fill="var(--ink-soft)" opacity="0.5"/>
-              <rect x="26" y="54" width="50" height="24" rx="2" fill="var(--panel)" stroke="var(--line)"/>
-              <rect x="26" y="82" width="50" height="24" rx="2" fill="var(--panel)" stroke="var(--line)"/>
-              <rect x="92" y="32" width="66" height="82" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="100" y="40" width="30" height="7" rx="1" fill="var(--ink-soft)" opacity="0.5"/>
-              <rect x="100" y="54" width="50" height="24" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
-              <rect x="166" y="32" width="66" height="82" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="174" y="40" width="30" height="7" rx="1" fill="var(--ink-soft)" opacity="0.5"/>
-              <rect x="174" y="54" width="50" height="24" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+              <rect x="20" y="20" width="90" height="9" rx="2" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="190" y="18" width="40" height="14" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+              <line x1="20" y1="40" x2="240" y2="40" stroke="var(--line)"/>
+              <rect x="20" y="50" width="130" height="6" rx="1" fill="var(--ink-soft)" opacity="0.3"/>
+              <rect x="200" y="50" width="30" height="6" rx="1" fill="var(--ink-soft)" opacity="0.3"/>
+              <rect x="20" y="64" width="130" height="6" rx="1" fill="var(--ink-soft)" opacity="0.3"/>
+              <rect x="200" y="64" width="30" height="6" rx="1" fill="var(--ink-soft)" opacity="0.3"/>
+              <rect x="20" y="78" width="130" height="6" rx="1" fill="var(--ink-soft)" opacity="0.3"/>
+              <rect x="200" y="78" width="30" height="6" rx="1" fill="var(--ink-soft)" opacity="0.3"/>
+              <line x1="20" y1="92" x2="240" y2="92" stroke="var(--line)" stroke-dasharray="2 3"/>
+              <rect x="150" y="100" width="80" height="14" rx="2" fill="var(--ink)"/>
+              <text x="190" y="110" font-family="JetBrains Mono, monospace" font-size="7" fill="#fff" text-anchor="middle">TOTAL: $</text>
             </svg>
           </div>
           <div class="project-body">
@@ -628,10 +651,10 @@
               <span class="project-num">01</span>
               <span class="project-status">Por publicar</span>
             </div>
-            <h3 class="project-title">Tablero de tareas (Kanban)</h3>
-            <p class="project-desc">Tablero estilo Trello con columnas arrastrables, tarjetas editables y persistencia local del estado.</p>
+            <h3 class="project-title">Sistema de facturación</h3>
+            <p class="project-desc">Creación de facturas, gestión de clientes y productos, cálculo automático de impuestos y descuentos, con historial de pagos.</p>
             <div class="chips">
-              <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">Tailwind CSS</span>
+              <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">SQL</span>
             </div>
             <div class="project-foot">
               <a class="btn-open" href="#" target="_blank" rel="noopener">Abrir proyecto <span>↗</span></a>
@@ -645,18 +668,22 @@
             <svg viewBox="0 0 260 132" preserveAspectRatio="none">
               <rect x="0" y="0" width="260" height="132" fill="var(--bg)"/>
               <rect x="10" y="10" width="240" height="112" rx="4" fill="var(--panel)" stroke="var(--line)"/>
-              <rect x="20" y="20" width="130" height="10" rx="2" fill="var(--ink-soft)" opacity="0.3"/>
-              <rect x="196" y="18" width="34" height="14" rx="7" fill="var(--accent)"/>
-              <rect x="20" y="42" width="66" height="52" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-              <circle cx="53" cy="60" r="12" fill="var(--accent-soft)" stroke="var(--accent)"/>
-              <rect x="26" y="80" width="54" height="6" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
-              <rect x="94" y="42" width="66" height="52" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-              <circle cx="127" cy="60" r="12" fill="var(--ink)" opacity="0.12"/>
-              <rect x="100" y="80" width="54" height="6" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
-              <rect x="168" y="42" width="66" height="52" rx="3" fill="var(--bg)" stroke="var(--line)"/>
-              <circle cx="201" cy="60" r="12" fill="var(--ink)" opacity="0.12"/>
-              <rect x="174" y="80" width="54" height="6" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
-              <rect x="20" y="102" width="220" height="10" rx="2" fill="var(--ink)" opacity="0.08"/>
+              <rect x="20" y="20" width="60" height="10" rx="2" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="192" y="18" width="38" height="14" rx="7" fill="var(--accent)"/>
+              <rect x="20" y="42" width="52" height="60" rx="3" fill="var(--bg)" stroke="var(--line)"/>
+              <rect x="28" y="50" width="36" height="6" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="28" y="62" width="36" height="16" rx="2" fill="var(--accent-soft)"/>
+              <text x="46" y="73" font-family="JetBrains Mono, monospace" font-size="7" fill="var(--ink)" text-anchor="middle">128</text>
+              <rect x="82" y="42" width="52" height="60" rx="3" fill="var(--bg)" stroke="var(--line)"/>
+              <rect x="90" y="50" width="36" height="6" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="90" y="62" width="36" height="16" rx="2" fill="var(--ink)" opacity="0.12"/>
+              <text x="108" y="73" font-family="JetBrains Mono, monospace" font-size="7" fill="var(--ink)" text-anchor="middle">12</text>
+              <rect x="144" y="42" width="52" height="60" rx="3" fill="var(--bg)" stroke="var(--line)"/>
+              <rect x="152" y="50" width="36" height="6" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="152" y="62" width="36" height="16" rx="2" fill="#fca5a5" opacity="0.4"/>
+              <text x="170" y="73" font-family="JetBrains Mono, monospace" font-size="7" fill="var(--ink)" text-anchor="middle">3</text>
+              <rect x="20" y="108" width="216" height="6" rx="1" fill="var(--line)"/>
+              <rect x="20" y="108" width="150" height="6" rx="1" fill="var(--accent)"/>
             </svg>
           </div>
           <div class="project-body">
@@ -664,10 +691,10 @@
               <span class="project-num">02</span>
               <span class="project-status">Por publicar</span>
             </div>
-            <h3 class="project-title">Catálogo e-commerce</h3>
-            <p class="project-desc">Tienda con filtros por categoría, carrito de compras y checkout simulado, consumiendo datos de una API mock.</p>
+            <h3 class="project-title">Sistema de inventario</h3>
+            <p class="project-desc">Control de existencias por almacén, alertas de stock bajo, entradas y salidas de producto, con historial de movimientos.</p>
             <div class="chips">
-              <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span>
+              <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">SQL Server</span>
             </div>
             <div class="project-foot">
               <a class="btn-open" href="#" target="_blank" rel="noopener">Abrir proyecto <span>↗</span></a>
@@ -681,16 +708,23 @@
             <svg viewBox="0 0 260 132" preserveAspectRatio="none">
               <rect x="0" y="0" width="260" height="132" fill="var(--bg)"/>
               <rect x="10" y="10" width="240" height="112" rx="4" fill="var(--panel)" stroke="var(--line)"/>
-              <rect x="24" y="26" width="90" height="12" rx="2" fill="var(--ink-soft)" opacity="0.4"/>
-              <text x="24" y="70" font-family="Space Grotesk, sans-serif" font-size="30" font-weight="700" fill="var(--ink)">24°</text>
-              <circle cx="150" cy="55" r="18" fill="var(--accent)" opacity="0.8"/>
-              <path d="M138 65 a14 14 0 1 0 2 -22" fill="var(--accent)" opacity="0.5"/>
-              <rect x="24" y="90" width="26" height="24" rx="2" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="58" y="90" width="26" height="24" rx="2" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="92" y="90" width="26" height="24" rx="2" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="126" y="90" width="26" height="24" rx="2" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="160" y="90" width="26" height="24" rx="2" fill="var(--bg)" stroke="var(--line)"/>
-              <rect x="194" y="90" width="26" height="24" rx="2" fill="var(--bg)" stroke="var(--line)"/>
+              <rect x="20" y="20" width="220" height="14" rx="2" fill="var(--bg)" stroke="var(--line)"/>
+              <rect x="26" y="25" width="70" height="5" rx="1" fill="var(--ink-soft)" opacity="0.5"/>
+              <rect x="200" y="25" width="30" height="5" rx="1" fill="var(--ink-soft)" opacity="0.5"/>
+              <rect x="20" y="40" width="220" height="16" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+              <rect x="26" y="46" width="70" height="5" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="200" y="45" width="26" height="8" rx="4" fill="var(--accent-soft)"/>
+              <text x="213" y="51" font-family="JetBrains Mono, monospace" font-size="6" fill="var(--tag-text)" text-anchor="middle">A</text>
+              <rect x="20" y="60" width="220" height="16" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+              <rect x="26" y="66" width="70" height="5" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="200" y="65" width="26" height="8" rx="4" fill="var(--accent-soft)"/>
+              <text x="213" y="71" font-family="JetBrains Mono, monospace" font-size="6" fill="var(--tag-text)" text-anchor="middle">B+</text>
+              <rect x="20" y="80" width="220" height="16" rx="2" fill="var(--panel)" stroke="var(--line)"/>
+              <rect x="26" y="86" width="70" height="5" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
+              <rect x="200" y="85" width="26" height="8" rx="4" fill="var(--accent-soft)"/>
+              <text x="213" y="91" font-family="JetBrains Mono, monospace" font-size="6" fill="var(--tag-text)" text-anchor="middle">A-</text>
+              <rect x="20" y="102" width="130" height="12" rx="2" fill="var(--ink)"/>
+              <text x="85" y="111" font-family="JetBrains Mono, monospace" font-size="7" fill="#fff" text-anchor="middle">Promedio: 91</text>
             </svg>
           </div>
           <div class="project-body">
@@ -698,41 +732,10 @@
               <span class="project-num">03</span>
               <span class="project-status">Por publicar</span>
             </div>
-            <h3 class="project-title">App del clima</h3>
-            <p class="project-desc">Consulta el clima por ciudad consumiendo una API pública, con pronóstico de varios días y unidades configurables.</p>
+            <h3 class="project-title">Sistema de calificaciones</h3>
+            <p class="project-desc">Plataforma tipo universitaria para registrar notas por materia, calcular promedios ponderados y consultar el historial académico.</p>
             <div class="chips">
-              <span class="chip">JavaScript</span><span class="chip">API REST</span><span class="chip">CSS</span>
-            </div>
-            <div class="project-foot">
-              <a class="btn-open" href="#" target="_blank" rel="noopener">Abrir proyecto <span>↗</span></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-preview">
-            <span class="preview-tag">Mockup</span>
-            <svg viewBox="0 0 260 132" preserveAspectRatio="none">
-              <rect x="0" y="0" width="260" height="132" fill="var(--bg)"/>
-              <rect x="10" y="10" width="240" height="112" rx="4" fill="var(--panel)" stroke="var(--line)"/>
-              <rect x="10" y="10" width="64" height="112" fill="var(--bg)"/>
-              <rect x="22" y="24" width="40" height="8" rx="1" fill="var(--ink-soft)" opacity="0.4"/>
-              <rect x="22" y="42" width="40" height="14" rx="2" fill="var(--accent-soft)"/>
-              <rect x="22" y="60" width="40" height="14" rx="2" fill="var(--panel)"/>
-              <rect x="22" y="78" width="40" height="14" rx="2" fill="var(--panel)"/>
-              <path d="M92,32 Q88,32 88,38 L88,58 Q88,64 94,64 L112,64 L120,72 L120,64 L128,64 Q134,64 134,58 L134,38 Q134,32 128,32 Z" fill="var(--panel)" stroke="var(--line)"/>
-              <path d="M228,72 Q234,72 234,78 L234,90 Q234,96 228,96 L160,96 L152,104 L152,96 L146,96 Q140,96 140,90 L140,78 Q140,72 146,72 Z" fill="var(--accent)" opacity="0.85"/>
-            </svg>
-          </div>
-          <div class="project-body">
-            <div class="project-top">
-              <span class="project-num">04</span>
-              <span class="project-status">Por publicar</span>
-            </div>
-            <h3 class="project-title">Chat en tiempo real</h3>
-            <p class="project-desc">Mensajería con salas de conversación, lista de contactos e indicador de "escribiendo" en tiempo real.</p>
-            <div class="chips">
-              <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">WebSockets</span>
+              <span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">SQL</span>
             </div>
             <div class="project-foot">
               <a class="btn-open" href="#" target="_blank" rel="noopener">Abrir proyecto <span>↗</span></a>
@@ -824,11 +827,40 @@
         <span class="job-date">Ene 2025 — Actualmente</span>
         <h3>Universidad del Caribe (UNICARIBE)</h3>
         <p>Ingeniería en Software · Santo Domingo, DN</p>
+        <div class="edu-certs">
+          <div class="skill-cat">Certificaciones</div>
+          <ul>
+            <li>Introduction to Secure Networking — Microsoft</li>
+            <li>Internet History, Technology, and Security — University of Michigan</li>
+            <li>Networking Fundamentals — Akamai Technologies</li>
+          </ul>
+        </div>
+        <div class="edu-project">
+          <div class="edu-project-label">
+            <div class="skill-cat">Proyecto de grado</div>
+            <span class="edu-project-name">Por definir</span>
+          </div>
+          <a class="btn-open-sm" href="#" target="_blank" rel="noopener">Abrir <span>↗</span></a>
+        </div>
       </div>
       <div class="edu-card">
         <span class="job-date">Sep 2021 — Dic 2023</span>
         <h3>Instituto Tecnológico de las Américas (ITLA)</h3>
         <p>Tecnólogo en Desarrollo de Software · Santo Domingo, DN</p>
+        <div class="edu-certs">
+          <div class="skill-cat">Certificaciones</div>
+          <ul>
+            <li>SCRUM Foundation Professional Certificate — CertiProf</li>
+            <li>IT Essentials — Cisco Networking Academy</li>
+          </ul>
+        </div>
+        <div class="edu-project">
+          <div class="edu-project-label">
+            <div class="skill-cat">Tesis</div>
+            <span class="edu-project-name">Por definir</span>
+          </div>
+          <a class="btn-open-sm" href="#" target="_blank" rel="noopener">Abrir <span>↗</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -873,18 +905,19 @@
     </div>
 
     <div class="cert-list reveal">
-      <div class="skill-cat">Certificaciones</div>
+      <div class="skill-cat">Certificaciones adicionales</div>
       <ul>
-        <li>SCRUM Foundation Professional Certificate — CertiProf</li>
-        <li>IT Essentials — Cisco Networking Academy</li>
         <li>The Complete 2025 Web Development Bootcamp — Udemy</li>
         <li>Manejador de Programas de Oficinas e Internet — INFOTEP</li>
       </ul>
     </div>
   </section>
 
-  <footer id="contacto">
-    <div class="contact-box">
+</div>
+
+<footer id="contacto">
+  <div class="contact-box">
+    <div class="wrap contact-inner">
       <div>
         <h2>Hablemos de datos.</h2>
         <p>Abierta a nuevas oportunidades en arquitectura de datos y BI.</p>
@@ -894,13 +927,65 @@
         <a href="tel:+18299152338">(829) 915-2338</a>
         <a href="https://anjeisi.github.io/" target="_blank">anjeisi.github.io ↗</a>
       </div>
+      <div class="contact-strip">Anjeisi Acosta Carvajal — Santo Domingo, República Dominicana</div>
     </div>
-    <div class="foot-note">Anjeisi Acosta Carvajal — Santo Domingo, República Dominicana</div>
-  </footer>
-
-</div>
+  </div>
+</footer>
 
 <script>
+  (function(){
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nameEl = document.getElementById('hero-name');
+    if(!nameEl || reduceMotion) return;
+
+    var pool = '01';
+
+    function wrapChars(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(child){
+        if(child.nodeType === 3){
+          var frag = document.createDocumentFragment();
+          child.textContent.split('').forEach(function(ch){
+            var span = document.createElement('span');
+            span.className = 'scramble-char';
+            span.textContent = ch;
+            span.dataset.final = ch;
+            frag.appendChild(span);
+          });
+          child.parentNode.replaceChild(frag, child);
+        } else if(child.nodeType === 1 && child.tagName !== 'BR'){
+          wrapChars(child);
+        }
+      });
+    }
+    wrapChars(nameEl);
+
+    var chars = nameEl.querySelectorAll('.scramble-char');
+
+    function runScramble(){
+      chars.forEach(function(span, i){
+        var final = span.dataset.final;
+        if(!final || !final.trim()) return;
+        var iterations = 0;
+        var maxIterations = 5 + Math.floor(Math.random() * 5);
+        setTimeout(function(){
+          span.classList.add('scrambling');
+          var interval = setInterval(function(){
+            span.textContent = pool[Math.floor(Math.random() * pool.length)];
+            iterations++;
+            if(iterations >= maxIterations){
+              clearInterval(interval);
+              span.textContent = final;
+              span.classList.remove('scrambling');
+            }
+          }, 40);
+        }, i * 28);
+      });
+    }
+
+    runScramble();
+    setInterval(runScramble, 5000);
+  })();
+
   var toggleBtn = document.getElementById('theme-toggle');
   toggleBtn.addEventListener('click', function(){
     var root = document.documentElement;
